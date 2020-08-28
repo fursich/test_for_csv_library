@@ -3,14 +3,14 @@ require 'pry'
 require_relative '../lib/csv_encoder.rb'
 
 RSpec.describe CSV do
-  xdescribe 'VERSION' do
-    it 'responds' do
+  describe 'VERSION' do
+    it 'has the specified version' do
       expect(CSV::VERSION).to eq '3.0.9'
       # expect(CSV::VERSION).to eq '2.4.8'
     end
   end
 
-  xdescribe '.generate' do
+  describe '.generate' do
     it 'responds' do
       expect(CSV).to respond_to(:generate)
     end

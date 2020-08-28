@@ -14,9 +14,11 @@ end
 
 module WriterOverrider
   def prepare_output
-    binding.pry
     super
-    binding.pry
+  end
+
+  def << (*args)
+    super
   end
 end
 
@@ -25,14 +27,15 @@ class CSV::Writer
   prepend WriterOverrider
 end
 
+default_stringio = $LOADED_FEATURES.grep(/stringio/).first
+$LOADED_FEATURES.delete default_stringio
+Object.send(:remove_const, :StringIO)
+require 'stringio'
 
 class Foo
   def generate
-    binding.pry
     CSV.generate(encoding: Encoding::Windows_31J) do |csv|
-      binding.pry
-      csv << ["ほげ"]
-      binding.pry
+      csv << ["a"]
       csv << ["\u2783\uF941\uF90A"]
     end
   end

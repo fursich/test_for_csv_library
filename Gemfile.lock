@@ -27,6 +27,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
+    stringio (0.1.3)
     yard (0.9.25)
 
 PLATFORMS
@@ -37,6 +38,7 @@ DEPENDENCIES
   pry-byebug
   pry-doc
   rspec
+  stringio (= 0.1.3)
 
 BUNDLED WITH
    2.1.4

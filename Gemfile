@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
+gem 'stringio', '0.1.3'
 gem 'rspec'
 gem 'pry'
 gem 'pry-byebug'
