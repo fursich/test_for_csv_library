@@ -1,15 +1,16 @@
 require 'csv'
+require 'pry'
 require_relative '../lib/csv_encoder.rb'
 
 RSpec.describe CSV do
-  describe 'VERSION' do
+  xdescribe 'VERSION' do
     it 'responds' do
-      # expect(CSV::VERSION).to eq '3.0.9'
-      expect(CSV::VERSION).to eq '2.4.8'
+      expect(CSV::VERSION).to eq '3.0.9'
+      # expect(CSV::VERSION).to eq '2.4.8'
     end
   end
 
-  describe '.generate' do
+  xdescribe '.generate' do
     it 'responds' do
       expect(CSV).to respond_to(:generate)
     end
@@ -26,7 +27,7 @@ RSpec.describe CSV do
 
       it { is_expected.to eq 'Windows-31J' }
 
-      context 'when prepended with custom String#encode method' do
+      xcontext 'when prepended with custom String#encode method' do
         before do
           String.prepend(OverrideStringEncodeWithOurDefaultOption)
         end
