@@ -4,7 +4,8 @@ require_relative '../lib/csv_encoder.rb'
 RSpec.describe CSV do
   describe 'VERSION' do
     it 'responds' do
-      expect(CSV::VERSION).to eq '3.0.9'
+      # expect(CSV::VERSION).to eq '3.0.9'
+      expect(CSV::VERSION).to eq '2.4.8'
     end
   end
 
